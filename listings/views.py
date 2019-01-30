@@ -4,10 +4,11 @@ from . models import Listing
 
 # Clistings views- funct def.
 def index(request):
-   listings = Listing.objects.all()
+   # Ordering the list based on list date desc and filtering the unpublished
+   listings = Listing.objects.order_by('-list_date').filter(is_published=True)
 
    #pagination setup ref django doc for details
-   paginator = Paginator(listings, 3)
+   paginator = Paginator(listings, 6)
    page = request.GET.get('page')
    paged_listing = paginator.get_page(page)
 
