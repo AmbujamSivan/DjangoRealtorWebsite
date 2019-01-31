@@ -4,11 +4,18 @@ from django.http import HttpResponse
 from listings.models import Listing
 from realtors.models import Realtor
 
+from listings.choices import price_choices, bedroom_chices,state_choices
+
 #View for Index page
 def index(request):
     #return HttpResponse('<h1>"This is a page"</h1>')
     listings = Listing.objects.order_by('-list_date').filter(is_published=True)[:3]
-    context = {'listings' : listings}
+    context = {
+         'listings' : listings,
+         'state_choices' : state_choices,
+         'bedroom_choices' : bedroom_chices,
+         'price_choices' : price_choices
+         }
     return render(request,'pages/index.html', context)
 
 def about(request):
