@@ -14,16 +14,18 @@
   <!-- Lightbox-->
   <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
 
-    <title>Ginger Real Estate</title>
+    <title>Ginger Real Estate -
+        {%block title%}
+        {%endblock%}
+    </title>
 </head>
 <body>
     <!--Top Bar-->
     {% include 'partials\_topbar.html' %}
     <!--Nav Bar-->
     {% include 'partials\_navbar.html' %}
-
-    {% block content %}      {% endblock %}
-
+    <!--block content from child space will replace this block-->
+    {% block content %}  {% endblock %}
     <!-- Fotter-->
     {% include 'partials\_footbar.html' %}
     
