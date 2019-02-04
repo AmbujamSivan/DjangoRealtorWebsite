@@ -48,11 +48,11 @@
             <tbody>
               {% for contact in contacts %}
               <tr>
-                <td>{{contact.id}}</td>
+                <td>{{contact.id}}</td>                
                 <td>{{contact.listing}}</td>
                 <td>
-                  <a class="btn btn-light" href="{%url 'listing' contact.listing_id % }">View Listing</a>
-                </td>
+                  <a href="{% url 'listing' contact.listing_id %}" class="btn btn-light" >View Listing</a>
+                </td>                       
               </tr>
              {%endfor%}           
             </tbody>
