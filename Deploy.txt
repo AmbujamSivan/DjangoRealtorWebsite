@@ -1,0 +1,4 @@
+push the code to cloude based repo like github/gitlab
+create account in digital ocean or AWS EC
+
+Our remoteip adrs on digital ocean with Ubuntu instance:167.99.156.53
