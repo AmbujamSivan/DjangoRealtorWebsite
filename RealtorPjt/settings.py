@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*y)q%a&dy0sj1ix6+3uq@vsilswnhshcglfr!v)mfcl@-762l@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -148,9 +148,10 @@ MESSAGE_TAGS = {
     messages.ERROR : 'danger',
 }
 
-#Email config
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_POST = 587
-EMAIL_HOST_USER='aumbujaum@gmail.com'
-EMAIL_HOST_PASSWORD=''
-EMAIL_USE_TLS=True
+
+
+#Prod settings
+try:
+    from .local_settings import *
+except ImportError:
+    pass
